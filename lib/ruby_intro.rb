@@ -3,15 +3,25 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.reduce(0) {|sum, ar| sum + ar}
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0 if arr.empty?
+  return arr[0] if arr.length == 1
+
+  arr.sort().last(2).sum
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  return false if arr.empty?
+  return false if arr.length == 1
+  arr.each do |num|
+    val = n - num
+    arr1 = arr - [num]
+    return true if arr1.include?(val)
+  end
+  false
 end
 
 # Part 2
