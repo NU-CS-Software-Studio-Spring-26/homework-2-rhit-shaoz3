@@ -27,15 +27,20 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  list = ['a', 'e', 'i', 'o', 'u']
+  return false if s.empty? or s[0].match?(/\P{L}/)
+  return false if list.include?(s[0].downcase)
+  true
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  return false if s.empty? or !(s =~ /\A-?\d+(\.\d+)?\z/)
+  return true if s.to_i % 4 == 0
+  false
 end
 
 # Part 3
